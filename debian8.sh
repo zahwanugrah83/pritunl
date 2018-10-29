@@ -42,11 +42,9 @@ service nginx restart
 
 #squid proxy
 apt-get -y install squid3
-cp /etc/squid3/squid.conf /etc/squid3/squid.conf.orig
-wget -O /etc/squid3/squid.conf "https://raw.githubusercontent.com/zahwanugrah83/pritunl/master/conf/squid.conf" 
-MYIP=`ifconfig | grep -Eo 'inet (addr:)?([0-9]*\.){3}[0-9]*' | grep -Eo '([0-9]*\.){3}[0-9]*' | grep -v '127.0.0' | grep -v '192.168'`;
-sed -i s/xxxxxxxxx/$MYIP/g /etc/squid3/squid.conf;
-service squid3 restart
+wget -O /etc/squid3/squid.conf $source/debian7/squid3.conf
+sed -i $MYIP2 /etc/squid3/squid.conf;
+service squid3 restart 
 
 # Install Vnstat
 apt-get -y install vnstat
