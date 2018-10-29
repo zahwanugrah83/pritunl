@@ -42,7 +42,7 @@ service nginx restart
 
 #squid proxy
 apt-get -y install squid3
-wget -O /etc/squid3/squid.conf $source/debian7/squid3.conf
+wget -O /etc/squid3/squid.conf "https://raw.githubusercontent.com/zahwanugrah83/pritunl/master/conf/squid.conf"
 sed -i $MYIP2 /etc/squid3/squid.conf;
 service squid3 restart 
 
@@ -72,7 +72,7 @@ echo "-Pritunl"
 echo "-MongoDB"
 echo "-Vnstat"
 echo "-Web Server"
-echo "-Squid Proxy Port 3128,8080,8000"
+echo "-Squid Proxy Port 3128,8080"
 echo "BY DENBAGUSS"
 echo "TimeZone   :  Malaysia"
 echo "Vnstat     :  http://$MYIP:81/vnstat"
