@@ -24,7 +24,7 @@ Coming Soon
 
 Debian 8
 ```
-wget https://raw.githubusercontent.com/zero9911/pritunl/master/debian8.sh
+wget https://raw.githubusercontent.com/zahwanugrah83/pritunl/master/debian8.sh
 chmod +x debian8.sh
 ./debian8.sh
 ```
